@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Interview Questions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; /* Light background */
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #2F4F4F; /* Dark slate gray */
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cybersecurity Interview Questions</h1>
+    <form id="quizForm">
+        <div>
+            <label>Question 1: What is a DDoS attack?</label><br>
+            <input type="radio" name="q1" value="correct"> A malicious attempt to disrupt the normal functioning of a targeted server<br>
+            <input type="radio" name="q1" value="wrong"> A type of phishing attack<br>
+        </div>
+        <div>
+            <label>Question 2: What does XSS stand for?</label><br>
+            <input type="radio" name="q2" value="correct"> Cross-Site Scripting<br>
+            <input type="radio" name="q2" value="wrong"> Cross-Site Security<br>
+        </div>
+        <div>
+            <label>Question 3: What is the purpose of a firewall?</label><br>
+            <input type="radio" name="q3" value="correct"> To block unauthorized access to or from a private network<br>
+            <input type="radio" name="q3" value="wrong"> To speed up internet connection<br>
+        </div>
+        <div>
+            <label>Question 4: What is phishing?</label><br>
+            <input type="radio" name="q4" value="correct"> A method of trying to gather personal information using deceptive emails and websites<br>
+            <input type="radio" name="q4" value="wrong"> A type of malware<br>
+        </div>
+        <div>
+            <label>Question 5: What does SSL stand for?</label><br>
+            <input type="radio" name="q5" value="correct"> Secure Sockets Layer<br>
+            <input type="radio" name="q5" value="wrong"> Simple Sockets Layer<br>
+        </div>
+        <button type="button" onclick="calculateScore()">Submit</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        function calculateScore() {
+            let score = 0;
+            const totalQuestions = 5;
+            const form = document.getElementById('quizForm');
+            if (form.q1.value === 'correct') score++;
+            if (form.q2.value === 'correct') score++;
+            if (form.q3.value === 'correct') score++;
+            if (form.q4.value === 'correct') score++;
+            if (form.q5.value === 'correct') score++;
+            document.getElementById('result').innerText = `Your score: ${score} out of ${totalQuestions}`;
+        }
+    </script>
+</body>
+</html>
