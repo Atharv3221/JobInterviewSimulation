@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Profile - Job Interview Simulator</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file if needed -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            width: 50px; /* Adjust logo size */
+            height: auto;
+            margin-right: 10px;
+        }
+        h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+        .profile-pic {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .profile-pic img {
+            width: 100px; /* Adjust profile picture size */
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        input[type="file"] {
+            margin-bottom: 20px;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+        .logout-button {
+            background-color: #d9534f;
+        }
+        .logout-button:hover {
+            background-color: #c9302c;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="logo">
+        <img src="logo.png" alt="Organization Logo"> <!-- Replace with your logo path -->
+        <h1>Job Interview Simulator</h1>
+    </div>
+    
+    <div class="profile-pic">
+        <img src="default-profile.png" alt="Profile Picture" id="profilePicture"> <!-- Default profile picture -->
+        <input type="file" accept="image/*" onchange="previewImage(event)">
+    </div>
+    
+    <h2>Your Name</h2>
+    <p id="candidateName">John Doe</p> <!-- Replace with dynamic name -->
+
+    <h3>About Yourself</h3>
+    <textarea rows="4" placeholder="Tell us about yourself..."></textarea>
+
+    <h3>Education</h3>
+    <textarea rows="2" placeholder="Your education details..."></textarea>
+
+    <h3>Job/Internship Experience (Optional)</h3>
+    <textarea rows="2" placeholder="Your job/internship experience..."></textarea>
+
+    <h3>GitHub Profile Link</h3>
+    <input type="text" placeholder="https://github.com/yourprofile" />
+
+    <button type="button" onclick="shareProfile()">Share Profile</button>
+    <button type="button" class="logout-button" onclick="logout()">Logout</button>
+</div>
+
+<script>
+    function previewImage(event) {
+        const image = document.getElementById('profilePicture');
+        image.src = URL.createObjectURL(event.target.files[0]);
+    }
+
+    function shareProfile() {
+        alert("Profile shared successfully!"); // Replace with actual sharing logic
+    }
+
+    function logout() {
+        // Replace with actual logout logic
+        alert("You have logged out.");
+    }
+</script>
+
+</body>
+</html>
