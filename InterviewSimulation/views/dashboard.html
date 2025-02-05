@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Job Interview Simulator - Dashboard</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file if needed -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #87CEEB; /* Sky blue background */
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            width: 50px; /* Adjust logo size */
+            height: auto;
+            margin-right: 10px;
+        }
+        h1 {
+            font-size: 24px;
+            margin: 0;
+            color: #2F4F4F; /* Dark slate gray */
+        }
+        .profile-section {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .profile-section img {
+            width: 40px; /* Profile picture size */
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .welcome {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #2F4F4F; /* Dark slate gray */
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #5cb85c; /* Green */
+        }
+        .interview-list, .practice-questions, .resources-list, .settings-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .interview-list li, .practice-questions li, .resources-list li, .settings-list li {
+            background: #e0f7fa; /* Light cyan */
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            color: #333; /* Dark text */
+        }
+        button {
+            padding: 10px;
+            background-color: #5cb85c; /* Green */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4cae4c; /* Darker green */
+        }
+        .logout-button {
+            background-color: #d9534f; /* Red */
+        }
+        .logout-button:hover {
+            background-color: #c9302c; /* Darker red */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="logo">
+            <img src="logo.png" alt="Organization Logo"> <!-- Replace with your logo path -->
+            <h1>Job Interview Simulator</h1>
+        </div>
+        <div class="profile-section" onclick="toggleProfileMenu()">
+            <img src="default-profile.png" alt="Profile Picture"> <!-- Replace with user's profile picture -->
+            <span>John Doe</span> <!-- Replace with dynamic name -->
+        </div>
+        <button class="logout-button" onclick="logout()">Logout</button>
+    </div>
+
+    <div class="welcome">
+        <p>Welcome, <strong>John Doe</strong>! Ready to prepare for your next technical interview?</p> <!-- Replace with dynamic name -->
+    </div>
+
+    <div class="section">
+        <h2>Upcoming Interviews</h2>
+        <ul class="interview-list">
+            <li>Interview with Company A - Date: 2023-10-15</li>
+            <li>Interview with Company B - Date: 2023-10-20</li>
+            <li>Interview with Company C - Date: 2023-10-25</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Practice Questions</h2>
+        <ul class
