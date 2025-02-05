@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Technical Job Interview Simulator - Dashboard</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file if needed -->
+    
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,17 +14,20 @@
         }
         .container {
             width: 80%;
+            max-width: 1200px; /* Limit the maximum width */
             margin: 20px auto;
             padding: 20px;
             background: white;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px; /* Slightly larger border radius */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Deeper shadow for depth */
         }
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
+            border-bottom: 2px solid #5cb85c; /* Green border for header */
+            padding-bottom: 10px;
         }
         .logo {
             display: flex;
@@ -64,6 +66,8 @@
             font-size: 20px;
             margin-bottom: 10px;
             color: #5cb85c; /* Green */
+            border-bottom: 1px solid #5cb85c; /* Underline for section titles */
+            padding-bottom: 5px;
         }
         .interview-list, .practice-questions, .resources-list, .settings-list {
             list-style-type: none;
@@ -75,6 +79,10 @@
             padding: 10px;
             border-radius: 5px;
             color: #333; /* Dark text */
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+        }
+        .interview-list li:hover, .practice-questions li:hover, .resources-list li:hover, .settings-list li:hover {
+            background: #b2ebf2; /* Slightly darker cyan on hover */
         }
         button {
             padding: 10px;
@@ -83,6 +91,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
         }
         button:hover {
             background-color: #4cae4c; /* Darker green */
@@ -125,4 +134,43 @@
 
     <div class="section">
         <h2>Practice Questions</h2>
-        <ul class
+        <ul class="practice-questions">
+            <li>What is your greatest strength?</li>
+            <li>How do you handle stress and pressure?</li>
+            <li>Describe a time when you had to work as part of a team.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Resources</h2>
+        <ul class="resources-list">
+            <li><a href="#">Interview Preparation Guide</a></li>
+            <li><a href="#">Common Technical Interview Questions</a></li>
+            <li><a href="#">Tips for Success in Interviews</a></li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Settings</h2>
+        <ul class="settings-list">
+            <li><a href="#">Profile Settings</a></li>
+            <li><a href="#">Change Password</a></li>
+            <li><a href="#">Notification Preferences</a></li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    function toggleProfileMenu() {
+        // Logic to toggle the profile menu (if you have one)
+        alert("Profile menu toggled!"); // Placeholder for demonstration
+    }
+
+    function logout() {
+        // Logic to handle user logout
+        alert("Logging out..."); // Placeholder for demonstration
+    }
+</script>
+
+</body>
+</html>

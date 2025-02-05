@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Technical Job Interview Simulator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #87CEEB; /* Sky blue background */
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            max-width: 600px; /* Limit the maximum width */
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            font-size: 28px;
+            color: #2F4F4F; /* Dark slate gray */
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #5cb85c; /* Green */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+        }
+        button:hover {
+            background-color: #4cae4c; /* Darker green */
+        }
+        .login-link {
+            margin-top: 20px;
+            display: block;
+            color: #5cb85c; /* Green */
+            text-decoration: none;
+        }
+        .login-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Register</h1>
+    <form>
+        <input type="text" placeholder="Username" required>
+        <input type="password" placeholder="Password" required>
+        <input type="password" placeholder="Confirm Password" required>
+        <button type="submit">Register</button>
+    </form>
+    <a href="login.html" class="login-link">Already have an account? Login here.</a>
+</div>
+
+</body>
+</html>

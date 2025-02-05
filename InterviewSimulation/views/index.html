@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Technical Job Interview Simulator</title>
@@ -16,16 +15,18 @@
         }
         .container {
             width: 80%;
+            max-width: 1200px; /* Limit the maximum width */
             margin: 0 auto;
             padding: 20px;
             background: white;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
         h1 {
             font-size: 36px;
             color: #2F4F4F; /* Dark slate gray */
+            margin-bottom: 10px;
         }
         p {
             font-size: 18px;
@@ -42,7 +43,7 @@
             padding: 10px 15px; /* Padding for better click area */
             border: 2px solid transparent; /* Initial border */
             border-radius: 5px; /* Rounded corners */
-            transition: border-color 0.3s; /* Smooth transition for border color */
+            transition: border-color 0.3s, background-color 0.3s; /* Smooth transition for border color and background */
         }
         nav a:hover {
             border-color: #5cb85c; /* Green border on hover */
@@ -53,6 +54,7 @@
             padding: 10px 0;
             background-color: #f4f4f4;
             border-top: 1px solid #ccc;
+            text-align: center; /* Center align footer text */
         }
     </style>
 </head>
