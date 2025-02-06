@@ -4,77 +4,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Candidate Profile - Job Interview Simulator</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file if needed -->
     <style>
+        /* General Styles */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f0f8ff, #e6f7ff);
             margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            animation: backgroundAnimation 6s infinite alternate;
         }
+
+        @keyframes backgroundAnimation {
+            0% { background: linear-gradient(135deg, #f0f8ff, #e6f7ff); }
+            100% { background: linear-gradient(135deg, #ffefba, #ffffff); }
+        }
+
         .container {
             width: 400px;
-            margin: 50px auto;
             padding: 20px;
-            background: white;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.5s ease;
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         .logo {
             display: flex;
             align-items: center;
+            justify-content: center;
             margin-bottom: 20px;
         }
+
         .logo img {
-            width: 50px; /* Adjust logo size */
+            width: 50px;
             height: auto;
             margin-right: 10px;
+            animation: rotateIn 1.2s linear;
         }
+
+        @keyframes rotateIn {
+            from { transform: rotate(-360deg); }
+            to { transform: rotate(0deg); }
+        }
+
         h1 {
             font-size: 24px;
             margin: 0;
+            color: #333;
         }
+
         .profile-pic {
             display: flex;
             flex-direction: column;
             align-items: center;
             margin-bottom: 20px;
         }
+
         .profile-pic img {
-            width: 100px; /* Adjust profile picture size */
+            width: 100px;
             height: 100px;
             border-radius: 50%;
-            margin-bottom: 10px;
+            border: 3px solid #5cb85c;
+            transition: transform 0.3s ease-in-out;
         }
+
+        .profile-pic img:hover {
+            transform: scale(1.1);
+        }
+
         input[type="file"] {
-            margin-bottom: 20px;
+            margin-top: 10px;
         }
-        textarea {
+
+        textarea, input[type="text"] {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
-            resize: vertical;
+            background-color: #f9f9f9;
+            transition: background-color 0.3s ease;
         }
+
+        textarea:focus, input[type="text"]:focus {
+            background-color: #e6f7ff;
+            outline: none;
+        }
+
         button {
             width: 100%;
             padding: 10px;
-            background-color: #5cb85c;
+            background: linear-gradient(45deg, #5cb85c, #4cae4c);
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             margin-top: 10px;
+            transition: background 0.3s ease;
         }
+
         button:hover {
-            background-color: #4cae4c;
+            background: linear-gradient(45deg, #4cae4c, #5cb85c);
         }
+
         .logout-button {
-            background-color: #d9534f;
+            background: linear-gradient(45deg, #d9534f, #c9302c);
         }
+
         .logout-button:hover {
-            background-color: #c9302c;
+            background: linear-gradient(45deg, #c9302c, #d9534f);
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
         }
     </style>
 </head>
@@ -85,14 +148,14 @@
         <img src="logo.png" alt="Organization Logo"> <!-- Replace with your logo path -->
         <h1>Job Interview Simulator</h1>
     </div>
-    
+
     <div class="profile-pic">
         <img src="default-profile.png" alt="Profile Picture" id="profilePicture"> <!-- Default profile picture -->
         <input type="file" accept="image/*" onchange="previewImage(event)">
     </div>
-    
+
     <h2>Your Name</h2>
-    <p id="candidateName">John Doe</p> <!-- Replace with dynamic name -->
+    <p id="candidateName">John Doe</p>
 
     <h3>About Yourself</h3>
     <textarea rows="4" placeholder="Tell us about yourself..."></textarea>
@@ -104,7 +167,7 @@
     <textarea rows="2" placeholder="Your job/internship experience..."></textarea>
 
     <h3>GitHub Profile Link</h3>
-    <input type="text" placeholder="https://github.com/yourprofile" />
+    <input type="text" placeholder="https://github.com/yourprofile">
 
     <button type="button" onclick="shareProfile()">Share Profile</button>
     <button type="button" class="logout-button" onclick="logout()">Logout</button>
@@ -117,11 +180,10 @@
     }
 
     function shareProfile() {
-        alert("Profile shared successfully!"); // Replace with actual sharing logic
+        alert("Profile shared successfully!");
     }
 
     function logout() {
-        // Replace with actual logout logic
         alert("You have logged out.");
     }
 </script>
