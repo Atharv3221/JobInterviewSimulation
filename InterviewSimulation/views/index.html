@@ -12,7 +12,14 @@
             margin: 0;
             padding: 0;
             color: #333;
+            animation: fadeIn 1.5s ease-out; /* Fade-in animation for body */
         }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
         .container {
             width: 80%;
             max-width: 1200px; /* Limit the maximum width */
@@ -22,19 +29,40 @@
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             text-align: center;
+            opacity: 0;
+            animation: slideUp 1.2s forwards; /* Slide-up animation */
         }
+
+        @keyframes slideUp {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
         h1 {
             font-size: 36px;
             color: #2F4F4F; /* Dark slate gray */
             margin-bottom: 10px;
+            animation: fadeInText 1s ease-out 0.5s forwards; /* Fade-in for header */
         }
+
+        @keyframes fadeInText {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
         p {
             font-size: 18px;
             margin: 20px 0;
+            opacity: 0;
+            animation: fadeInText 1s ease-out 1s forwards; /* Delayed fade-in for paragraph */
         }
+
         nav {
             margin: 20px 0;
+            opacity: 0;
+            animation: fadeInText 1s ease-out 1.5s forwards; /* Delayed fade-in for nav */
         }
+
         nav a {
             margin: 0 15px;
             text-decoration: none;
@@ -44,17 +72,32 @@
             border: 2px solid transparent; /* Initial border */
             border-radius: 5px; /* Rounded corners */
             transition: border-color 0.3s, background-color 0.3s; /* Smooth transition for border color and background */
+            display: inline-block;
+            transform: translateY(10px);
+            opacity: 0;
+            animation: fadeInText 1s ease-out 2s forwards; /* Delay animation for links */
         }
+
         nav a:hover {
             border-color: #5cb85c; /* Green border on hover */
             background-color: rgba(92, 184, 92, 0.1); /* Light green background on hover */
+            transform: translateY(0) scale(1.05); /* Hover effect with slight upward move */
         }
+
         footer {
             margin-top: 20px;
             padding: 10px 0;
             background-color: #f4f4f4;
             border-top: 1px solid #ccc;
             text-align: center; /* Center align footer text */
+            opacity: 0;
+            animation: fadeInText 1s ease-out 2.5s forwards; /* Delayed fade-in for footer */
+        }
+
+        /* Optional: Add a hover effect for the container as well */
+        .container:hover {
+            transform: scale(1.02); /* Slight zoom effect when hovering over the container */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
         }
     </style>
 </head>

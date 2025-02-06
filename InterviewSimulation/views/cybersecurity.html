@@ -10,13 +10,67 @@
             background-color: #f0f8ff; /* Light background */
             margin: 0;
             padding: 20px;
+            color: #333;
         }
+        
         h1 {
             color: #2F4F4F; /* Dark slate gray */
+            text-align: center;
         }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        div {
+            margin-bottom: 20px; /* Added space after each question */
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 1.1em;
+            display: block;
+            margin-bottom: 10px; /* Space between label and options */
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+            vertical-align: middle; /* Align the options with the question */
+        }
+
+        .radio-option {
+            display: inline-block;
+            line-height: 1.5em; /* Aligns the text properly with the radio button */
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745; /* Green color */
+            color: white;
+            border: none;
+            font-size: 1.1em;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #218838; /* Slightly darker green on hover */
+        }
+
         #result {
             margin-top: 20px;
             font-weight: bold;
+            font-size: 1.2em;
+            text-align: center;
+            color: #2F4F4F;
         }
     </style>
 </head>
@@ -24,29 +78,29 @@
     <h1>Cybersecurity Interview Questions</h1>
     <form id="quizForm">
         <div>
-            <label>Question 1: What is a DDoS attack?</label><br>
-            <input type="radio" name="q1" value="correct"> A malicious attempt to disrupt the normal functioning of a targeted server<br>
-            <input type="radio" name="q1" value="wrong"> A type of phishing attack<br>
+            <label>Question 1: What is a DDoS attack?</label>
+            <input type="radio" name="q1" value="correct" class="radio-option"> A malicious attempt to disrupt the normal functioning of a targeted server<br>
+            <input type="radio" name="q1" value="wrong" class="radio-option"> A type of phishing attack<br>
         </div>
         <div>
-            <label>Question 2: What does XSS stand for?</label><br>
-            <input type="radio" name="q2" value="correct"> Cross-Site Scripting<br>
-            <input type="radio" name="q2" value="wrong"> Cross-Site Security<br>
+            <label>Question 2: What does XSS stand for?</label>
+            <input type="radio" name="q2" value="correct" class="radio-option"> Cross-Site Scripting<br>
+            <input type="radio" name="q2" value="wrong" class="radio-option"> Cross-Site Security<br>
         </div>
         <div>
-            <label>Question 3: What is the purpose of a firewall?</label><br>
-            <input type="radio" name="q3" value="correct"> To block unauthorized access to or from a private network<br>
-            <input type="radio" name="q3" value="wrong"> To speed up internet connection<br>
+            <label>Question 3: What is the purpose of a firewall?</label>
+            <input type="radio" name="q3" value="correct" class="radio-option"> To block unauthorized access to or from a private network<br>
+            <input type="radio" name="q3" value="wrong" class="radio-option"> To speed up internet connection<br>
         </div>
         <div>
-            <label>Question 4: What is phishing?</label><br>
-            <input type="radio" name="q4" value="correct"> A method of trying to gather personal information using deceptive emails and websites<br>
-            <input type="radio" name="q4" value="wrong"> A type of malware<br>
+            <label>Question 4: What is phishing?</label>
+            <input type="radio" name="q4" value="correct" class="radio-option"> A method of trying to gather personal information using deceptive emails and websites<br>
+            <input type="radio" name="q4" value="wrong" class="radio-option"> A type of malware<br>
         </div>
         <div>
-            <label>Question 5: What does SSL stand for?</label><br>
-            <input type="radio" name="q5" value="correct"> Secure Sockets Layer<br>
-            <input type="radio" name="q5" value="wrong"> Simple Sockets Layer<br>
+            <label>Question 5: What does SSL stand for?</label>
+            <input type="radio" name="q5" value="correct" class="radio-option"> Secure Sockets Layer<br>
+            <input type="radio" name="q5" value="wrong" class="radio-option"> Simple Sockets Layer<br>
         </div>
         <button type="button" onclick="calculateScore()">Submit</button>
     </form>

@@ -11,96 +11,137 @@
             background-color: #87CEEB; /* Sky blue background */
             margin: 0;
             padding: 0;
+            animation: fadeIn 1s ease-out; /* Fade in animation for the body */
         }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
         .container {
             width: 80%;
-            max-width: 1200px; /* Limit the maximum width */
+            max-width: 1200px;
             margin: 20px auto;
             padding: 20px;
             background: white;
-            border-radius: 8px; /* Slightly larger border radius */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Deeper shadow for depth */
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: slideUp 1s forwards; /* Slide up effect for the container */
         }
+
+        @keyframes slideUp {
+            0% { transform: translateY(30px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
-            border-bottom: 2px solid #5cb85c; /* Green border for header */
+            border-bottom: 2px solid #5cb85c;
             padding-bottom: 10px;
+            animation: fadeIn 2s ease-out 0.5s forwards; /* Delayed fade-in for header */
         }
+
         .logo {
             display: flex;
-            align-items: center;
-        }
-        .logo img {
-            width: 50px; /* Adjust logo size */
+             align-items: center;
+        }  
+    
+
+        .logo img { 
+            width: 50px;
             height: auto;
             margin-right: 10px;
         }
+
         h1 {
             font-size: 24px;
             margin: 0;
-            color: #2F4F4F; /* Dark slate gray */
+            color: #2F4F4F;
         }
+
         .profile-section {
             display: flex;
             align-items: center;
             cursor: pointer;
+            transition: transform 0.3s; /* Smooth transform effect */
         }
+
+        .profile-section:hover {
+            transform: scale(1.05); /* Slight scaling on hover */
+        }
+
         .profile-section img {
-            width: 40px; /* Profile picture size */
+            width: 40px;
             height: 40px;
             border-radius: 50%;
             margin-right: 10px;
         }
+
         .welcome {
             font-size: 18px;
             margin-bottom: 20px;
-            color: #2F4F4F; /* Dark slate gray */
+            color: #2F4F4F;
+            animation: fadeIn 1s ease-out 1s forwards; /* Delayed fade-in for welcome text */
         }
+
         .section {
             margin-bottom: 20px;
+            animation: fadeIn 1s ease-out 1.5s forwards; /* Delayed fade-in for sections */
         }
+
         .section h2 {
             font-size: 20px;
             margin-bottom: 10px;
-            color: #5cb85c; /* Green */
-            border-bottom: 1px solid #5cb85c; /* Underline for section titles */
+            color: #5cb85c;
+            border-bottom: 1px solid #5cb85c;
             padding-bottom: 5px;
         }
+
         .interview-list, .practice-questions, .resources-list, .settings-list, .prepare-list, .dsa-list, .resume-list, .soft-skills-list {
             list-style-type: none;
             padding: 0;
         }
+
         .interview-list li, .practice-questions li, .resources-list li, .settings-list li, .prepare-list li, .dsa-list li, .resume-list li, .soft-skills-list li {
-            background: #e0f7fa; /* Light cyan */
+            background: #e0f7fa;
             margin: 5px 0;
             padding: 10px;
             border-radius: 5px;
-            color: #333; /* Dark text */
-            transition: background-color 0.3s; /* Smooth transition for hover effect */
+            color: #333;
+            transition: background-color 0.3s, transform 0.3s; /* Smooth background and transform transitions */
         }
+
         .interview-list li:hover, .practice-questions li:hover, .resources-list li:hover, .settings-list li:hover, .prepare-list li:hover, .dsa-list li:hover, .resume-list li:hover, .soft-skills-list li:hover {
-            background: #b2ebf2; /* Slightly darker cyan on hover */
+            background: #b2ebf2;
+            transform: translateX(10px); /* Slight move to the right on hover */
         }
+
         button {
             padding: 10px;
-            background-color: #5cb85c; /* Green */
+            background-color: #5cb85c;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s; /* Smooth transition for hover effect */
+            transition: background-color 0.3s, transform 0.3s; /* Smooth transition for color and transform */
         }
+
         button:hover {
-            background-color: #4cae4c; /* Darker green */
+            background-color: #4cae4c;
+            transform: scale(1.05); /* Slight scaling effect on hover */
         }
+
         .logout-button {
-            background-color: #d9534f; /* Red */
+            background-color: #d9534f;
         }
+
         .logout-button:hover {
-            background-color: #c9302c; /* Darker red */
+            background-color: #c9302c;
         }
     </style>
 </head>
@@ -109,29 +150,27 @@
 <div class="container">
     <div class="header">
         <div class="logo">
-            <img src="logo.png" alt="Organization Logo"> <!-- Replace with your logo path -->
+            <img src="logo.png" alt="Organization Logo">
             <h1>Job Interview Simulator</h1>
         </div>
         <div class="profile-section" onclick="toggleProfileMenu()">
-            <img src="default-profile.png" alt="Profile Picture"> <!-- Replace with user's profile picture -->
-            <span>John Doe</span> <!-- Replace with dynamic name -->
+            <img src="default-profile.png" alt="Profile Picture">
+            <span>John Doe</span>
         </div>
         <button class="logout-button" onclick="logout()">Logout</button>
     </div>
 
     <div class="welcome">
-        <p>Welcome, <strong>John Doe</strong>! Ready to prepare for your next technical interview?</p> <!-- Replace with dynamic name -->
+        <p>Welcome, <strong>John Doe</strong>! Ready to prepare for your next technical interview?</p>
     </div>
 
     <div class="section">
-        <h2> Resume</h2>
+        <h2>Resume</h2>
         <ul class="resume-list">
             <li><a href="make_resume.html">Make Resume</a></li>
             <li><a href="evaluate_resume.html">Evaluate Resume</a></li>
         </ul>
     </div>
-
-   
 
     <div class="section">
         <h2>DSA Practice</h2>
@@ -182,7 +221,7 @@
     <div class="section">
         <h2>Settings</h2>
         <ul class="settings-list">
-            <li><a href="#">Profile Settings</a></li>
+            <li><a href="profilesettings.html">Profile Settings</a></li>
             <li><a href="#">Change Password</a></li>
             <li><a href="#">Notification Preferences</a></li>
         </ul>
@@ -191,13 +230,11 @@
 
 <script>
     function toggleProfileMenu() {
-        // Logic to toggle the profile menu (if you have one)
-        alert("Profile menu toggled!"); // Placeholder for demonstration
+        alert("Profile menu toggled!");
     }
 
     function logout() {
-        // Logic to handle user logout
-        alert("Logging out..."); // Placeholder for demonstration
+        alert("Logging out...");
     }
 </script>
 
